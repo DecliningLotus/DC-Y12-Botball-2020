@@ -16,10 +16,11 @@ void run()
 
     //Begin moving towards second point in front of Mountain View.
     spinRightAngle(180);
-    while (analog(<distance sensor port>) <= <analog value>))
-        { //Distance sensor measuring distance from Minecart ahead, until it should stop.
-            moveForward(100);
-        }
+    while (analog(<distance sensor port>) <= <analog value>)
+    {
+        //Distance sensor measuring distance from Minecart ahead, until it should stop.
+        moveForward(100);
+    }
     moveStop();
 
     spinLeftAngle(90);
