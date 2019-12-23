@@ -39,7 +39,7 @@ void run()
 
     //Begin reversing to starting position.
     moveBackwardDistance(1499, <distance>);
-    while (digital(<port>) == 0) //Slow down bot before hitting the PVC pipe to ensure we don't crash it hard.
+    while ((digital(<port1>) == 0) && (digital(<port2>) == 0)) //Slow down bot before hitting the PVC pipe to ensure we don't crash it hard.
     {
         moveBackward(500);
     }
@@ -50,9 +50,14 @@ void run()
     spinRight(300, <time>);
 
     moveForwardDistance(1500, <distance>);
-    while (digital(<port>) == 0) //Slow down bot before hitting PVC pipe.
+    while ((digital(<port1>) == 0) && (digital(<port2>) == 0)) //Slow down bot before hitting PVC pipe.
     {
         moveForward(500);
     }
     moveStop();
+
+    //Knock out Material Transport
+    //Mechanics TBD
+
+    //Going up the ramp etc will be discussed after Material Transport is rseolved.
 }
