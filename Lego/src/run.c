@@ -4,19 +4,55 @@
 
 void run()
 {
-    //Instruction path here. The following are examples for starting clarification.
-
-    //Drive until bump with digital sensor example.
-    while (digital(0) == 0)
+    //Begin Lego movement down the board sweeping puffles.
+    int i;
+    for (size_t i = 0; i < 4; i++)
     {
-        moveForward(1000);
+        //Movement for first 4 Minecarts
+        while (analog(<port>) >= <value>)
+        {
+            //IR Reflectance sensor checking if there is minecart or not.
+            moveForward(1000);
+        }
+        moveStop();
+
+        //Sweep puffles.
+        //Sweeping mechanics TBD.
+    }
+
+    //Cross underneath bridge.
+    moveForwardDistance(900, <distance ticks>);
+
+    //Continue with last 3 Minecarts.
+    for (size_t i = 0; i < 3; i++)
+    {
+        while (analog(<port>) >= <value>)
+        {
+            //IR Reflectance sensor checking if there is minecart or not.
+            moveForward(1000);
+        }
+        moveStop();
+
+        //Sweep puffles.
+        //Sweeping mechanics TBD.
+    }
+
+    //Begin reversing to starting position.
+    moveBackwardDistance(1499, <distance>);
+    while (digital(<port>) == 0) //Slow down bot before hitting the PVC pipe to ensure we don't crash it hard.
+    {
+        moveBackward(500);
     }
     moveStop();
 
-    //Drive until analog sensor threshold is met.
-    while (analog(0) <= 1500)
+    //Head in front of Material Transport.
+    moveForwardDistance(400, 600); //Ease the bot out so it has turning space.
+    spinRight(300, <time>);
+
+    moveForwardDistance(1500, <distance>);
+    while (digital(<port>) == 0) //Slow down bot before hitting PVC pipe.
     {
-        moveBackward(750);
+        moveForward(500);
     }
     moveStop();
 }
