@@ -82,20 +82,24 @@ void spinRightAngle(int speed, int angle)
 
 void spinLeftAngle(int speed, int angle)
 {
+    msleep(350);
     set_create_total_angle(0);
     while (get_create_angle() < angle)
     {
         create_drive_direct(speed * -1, speed);
     }
     moveStop();
+    msleep(100);
 }
 
 void spinRightAngle(int speed, int angle)
 {
+    msleep(350);
     set_create_total_angle(0);
     while (get_create_angle() * -1 < angle)
     {
         create_drive_direct(speed, speed * -1);
     }
     moveStop();
+    msleep(100);
 }
