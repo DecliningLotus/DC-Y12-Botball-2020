@@ -1,14 +1,22 @@
 #include "servos.h"
 
 //Example code
-void openGrabber()
+void raiseArm()
 {
     set_servo_position(SERVO_1_PORT, <value>);
-    set_servo_position(SERVO_2_PORT, <value>);
 }
 
-void closeGrabber()
+void lowerArm()
 {
     set_servo_position(SERVO_1_PORT, <value>);
-    set_servo_position(SERVO_2_PORT, <value>);
+}
+
+void openClaw()
+{
+    set_servo_position(SERVO_1_PORT, <value>);
+}
+
+void closeClaw()
+{
+    set_servo_position(SERVO_1_PORT, <value>);
 }
