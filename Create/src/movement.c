@@ -2,7 +2,6 @@
 
 void moveForward(int speed)
 {
-    printf("%d", speed);
     create_drive_direct(speed, speed);
 }
 
