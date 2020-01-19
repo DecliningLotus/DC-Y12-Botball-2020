@@ -67,6 +67,7 @@ void moveForwardTime(int speed, int time)
     msleep(time);
     mav(LEFT_MOTOR, 0);
     mav(RIGHT_MOTOR, 0);
+    msleep(200);
 }
 
 void moveBackwardTime(int speed, int time)
@@ -76,6 +77,7 @@ void moveBackwardTime(int speed, int time)
     msleep(time);
     mav(LEFT_MOTOR, 0);
     mav(RIGHT_MOTOR, 0);
+    msleep(200);
 }
 
 void spinLeft(int speed, int time)
@@ -85,6 +87,7 @@ void spinLeft(int speed, int time)
     msleep(time);
     mav(LEFT_MOTOR, 0);
     mav(RIGHT_MOTOR, 0);
+    msleep(200);
 }
 
 void spinRight(int speed, int time)
@@ -94,4 +97,5 @@ void spinRight(int speed, int time)
     msleep(time);
     mav(LEFT_MOTOR, 0);
     mav(RIGHT_MOTOR, 0);
+    msleep(200);
 }
