@@ -4,41 +4,48 @@
 
 void run()
 {
-    //Begin moving Create towards first point in front of Communication Orb.
-    moveForwardDistance(100, <value>);
-    spinLeftAngle(90);
-
-    //Activate crane to pick up Communication Orb.
-    //Crane mechanics TBD
-
-    //Spin spinners to correct colors.
-    //Spinner mechnaics TBD.
-
-    //Begin moving towards second point in front of Mountain View.
-    spinRightAngle(180);
-    while (analog(<distance sensor port>) <= <analog value>)
+    //Charge at Larry
+    spinRightAngle(250, 47);
+    moveForwardDistance(450, 1000);
+    while (analog(IR_PORT) < 500)
     {
-        //Distance sensor measuring distance from Minecart ahead, until it should stop.
-        moveForward(100);
+        moveForward(200);
     }
     moveStop();
 
-    spinLeftAngle(90);
-    moveForwardDistance(100, <value>);
+    //Come back to Communication Orb Zone
+    spinLeftAngle(250, 182);
+    moveForwardDistance(450, 800);
+    spinRightAngle(250, 47);
+    moveForwardDistance(250, 500);
 
-    //Activate crane to pick up Botguy and place Communication Orb.
-    //Crane mechanics TBD
+    //Shove Ore Boxes to Storage
+    //Do ore box stuff
 
-    //Begin sweep of leftover puffles.
-    spinRightAngle(180);
-    moveForwardDistance(100, <value>);
-    //Sweep mechanics TBG
+    //Pick up Communication Orb
+    openClaw();
+    lowerArmBottom();
+    closeClaw();
+    raiseArmTop();
 
-    //Return to spot in front of puffle stockpiles.
-    spinLeftAngle(100, 45);
-    moveForwardDistance(100, <value>);
-    spinLeftAngle(100, 45);
+    //Head towards Communication Orb staging zone
+    spinLeftAngle(250, 182);
+    moveForwardDistance(450, 500);
+    spinLeftAngle(250, 47);
+    while (analog(IR_PORT) < 500)
+    {
+        moveForward(300);
+    }
+    moveStop();
 
-    //Begin sorting process.
-    //Sorting mechanics TBD.
+    //Place communication and HOLD
+    raiseArmTop();
+    while (analog(IR_PORT) < 300)
+    {
+        moveForward(500);
+    }
+    moveStop();
+
+    //Pull up Minecart with second crane
+    //Mechanics TBD
 }
