@@ -1,8 +1,8 @@
 #include <kipr/botball.h>
 
-#define SERVO_1_PORT <port number>
-#define SERVO_2_PORT <port number>
-#define SERVO_3_PORT <port number>
+#define SWEEPER_PORT 0
+#define SWEEPER_ARM_PORT 1
+#define CLAW_PORT 2
 
 void openClaw();
 
