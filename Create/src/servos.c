@@ -7,10 +7,8 @@ void raiseArmTop()
         set_servo_position(SERVO_1_PORT, 1457);
         msleep(100);
         motor(MOTOR_1_PORT, 450);
-        motor(MOTOR_2_PORT, -450);
     }
     motor(MOTOR_1_PORT, 0);
-    motor(MOTOR_2_PORT, 0);
 }
 
 void lowerArmBottom()
@@ -20,18 +18,16 @@ void lowerArmBottom()
         set_servo_position(SERVO_1_PORT, 2000);
         msleep(100);
         motor(MOTOR_1_PORT, -450);
-        motor(MOTOR_2_PORT, 450);
     }
     motor(MOTOR_1_PORT, 0);
-    motor(MOTOR_2_PORT, 0);
 }
 
 void openClaw()
 {
-    set_servo_position(SERVO_2_PORT, <value>);
+    set_servo_position(SERVO_2_PORT, 1000);
 }
 
 void closeClaw()
 {
-    set_servo_position(SERVO_2_PORT, <value>);
+    set_servo_position(SERVO_2_PORT, 600);
 }
