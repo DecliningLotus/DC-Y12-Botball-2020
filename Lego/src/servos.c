@@ -31,3 +31,15 @@ void sweep()
     set_servo_position(SWEEPER_PORT, 500);
     msleep(200);
 }
+
+void spinArmLeft()
+{
+    set_servo_position(SPIN_ARM_PORT, 1600);
+    msleep(200);
+}
+
+void spinArmRight()
+{
+    set_servo_position(SPIN_ARM_PORT, 400);
+    msleep(200);
+}
