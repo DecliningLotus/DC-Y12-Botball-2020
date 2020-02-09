@@ -4,20 +4,38 @@
 
 void run()
 {
-    //Charge at Larry
-    spinRightAngle(250, 47);
-    moveForwardDistance(450, 1000);
-    while (analog(IR_PORT) < 500)
+    //    unfoldArm();
+    //    msleep(5000);
+
+    //Charge and Grab BotGuy
+    msleep(3000);
+    openClaw(2000);
+    spinLeftAngle(100, 46);
+    moveForwardDistance(300, 800);
+    while (get_create_rbump() == 0)
     {
-        moveForward(200);
+        moveForward(150);
     }
     moveStop();
+    closeClaw(2000);
 
-    //Come back to Communication Orb Zone
-    spinLeftAngle(250, 182);
-    moveForwardDistance(450, 800);
-    spinRightAngle(250, 47);
-    moveForwardDistance(250, 500);
+    //Drop BotGuy
+    moveBackwardDistance(100, 215);
+    spinLeftAngle(100, 40);
+
+    //Set pos for communication Orb
+    motor(MOTOR_1_PORT, 50);
+    msleep(5000);
+    motor(MOTOR_1_PORT, 0);
+    set_servo_position(ARM_PORT, 250);
+    msleep(500);
+    spinLeftAngle(100, 90);
+    openClaw(1800);
+
+    // Go to communication orb
+    moveBackwardDistance(200, 100);
+    msleep(1000);
+    spinLeftAngle(100, 40);
 
     //Shove Ore Boxes to Storage
     //Do ore box stuff
