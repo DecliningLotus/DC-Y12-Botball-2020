@@ -4,48 +4,46 @@
 
 void run()
 {
-    //Charge at Larry
-    spinRightAngle(250, 47);
-    moveForwardDistance(450, 1000);
-    while (analog(IR_PORT) < 500)
+    //unfoldArm();
+    //msleep(300);
+
+    //Charge and Grab BotGuy
+    openClaw();
+    spinLeftAngle(100, 18);
+    moveForwardDistance(300, 800);
+    while (get_create_rbump() == 0)
     {
         moveForward(200);
     }
     moveStop();
+    closeClaw();
+    msleep(200);
 
-    //Come back to Communication Orb Zone
-    spinLeftAngle(250, 182);
-    moveForwardDistance(450, 800);
-    spinRightAngle(250, 47);
-    moveForwardDistance(250, 500);
+    //Drop BotGuy
+    moveBackwardDistance(100, 300);
+    spinRightAngle(60, 90);
+    openClaw();
+    msleep(500);
+    spinLeftAngle(60, 90);
 
-    //Shove Ore Boxes to Storage
-    //Do ore box stuff
+    //Set pos for communication Orb
+    spinLeftAngle(100, 141);
+    lowerArmBottom();
+
+    // Go to communication orb
+    moveForwardDistance(300, 230);
+    msleep(100);
 
     //Pick up Communication Orb
-    openClaw();
-    lowerArmBottom();
     closeClaw();
     raiseArmTop();
 
     //Head towards Communication Orb staging zone
-    spinLeftAngle(250, 182);
-    moveForwardDistance(450, 500);
-    spinLeftAngle(250, 47);
-    while (analog(IR_PORT) < 500)
+    spinRightAngle(100, 141);
+    moveForwardDistance(300, 250);
+    while (get_create_rbump() == 0)
     {
         moveForward(300);
     }
     moveStop();
-
-    //Place communication and HOLD
-    raiseArmTop();
-    while (analog(IR_PORT) < 300)
-    {
-        moveForward(500);
-    }
-    moveStop();
-
-    //Pull up Minecart with second crane
-    //Mechanics TBD
 }

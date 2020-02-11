@@ -4,56 +4,61 @@ int i;
 
 void unfoldArm()
 {
-    motor(MOTOR_1_PORT, 50);
-    msleep(2000);
+    motor(MOTOR_1_PORT, -50);
+    msleep(4900);
     motor(MOTOR_1_PORT, 0);
-    for (i = 2200; i >= 360; i -= 20)
+    for (i = 1900; i >= 500; i -= 15)
     {
         set_servo_position(ARM_PORT, i);
-        msleep(10);
+        msleep(15);
     }
-    set_servo_position(ARM_PORT, 360);
-    motor(MOTOR_1_PORT, 50);
-    msleep(800);
-    motor(MOTOR_1_PORT, 20);
-    msleep(420);
-    motor(MOTOR_1_PORT, 0);
+    set_servo_position(ARM_PORT, 500);
 }
 
 void raiseArmTop()
 {
-    int i;
-    for (i = 1800, i >= 360, i -= 20)
+    motor(MOTOR_1_PORT, -50);
+    msleep(4000);
+    motor(MOTOR_1_PORT, 0);
+    msleep(100);
+    for (i = 180; i <= 500; i += 7)
     {
         set_servo_position(ARM_PORT, i);
-        msleep(10);
+        msleep(15);
     }
-    set_servo_position(ARM_PORT, 360);
-    msleep(100);
-    motor(MOTOR_1_PORT, 300);
-    motor(MOTOR_1_PORT, 0);
+    set_servo_position(ARM_PORT, 500);
 }
 
 void lowerArmBottom()
 {
-    for (i = 360, i <= 1800, i += 20)
+    for (i = 500; i >= 180; i -= 15)
     {
         set_servo_position(ARM_PORT, i);
-        msleep(10);
+        msleep(15);
     }
-    set_servo_position(ARM_PORT, 1800);
+    set_servo_position(ARM_PORT, 180);
     msleep(100);
-    motor(MOTOR_1_PORT, -300);
-    msleep(2500);
+    motor(MOTOR_1_PORT, 50);
+    msleep(4000);
     motor(MOTOR_1_PORT, 0);
 }
 
 void openClaw()
 {
-    set_servo_position(CLAW_PORT, 1000);
+    for (i = 500; i <= 1300; i += 30)
+    {
+        set_servo_position(CLAW_PORT, i);
+        msleep(15);
+    }
+    set_servo_position(CLAW_PORT, 1300);
 }
 
 void closeClaw()
 {
-    set_servo_position(CLAW_PORT, 600);
+    for (i = 1300; i >= 500; i -= 30)
+    {
+        set_servo_position(CLAW_PORT, i);
+        msleep(15);
+    }
+    set_servo_position(CLAW_PORT, 500);
 }
