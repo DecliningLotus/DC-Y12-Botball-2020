@@ -8,6 +8,12 @@ void raiseArmTop();
 
 void lowerArmBottom();
 
-void openClaw();
+void openClaw(int start, int end);
 
-void closeClaw();
+void closeClaw(int start, int end);
+
+void lowerClaw();
+
+void raiseArmAstro();
+
+void lowerArmAstro();

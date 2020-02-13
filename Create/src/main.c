@@ -4,10 +4,10 @@
 int main()
 {
     create_connect();
-    wait_for_light(<analog port>);
-    shut_down_in(119);
     enable_servos();
     printf("Create initialization complete!");
+    //wait_for_light(<analog port>);
+    shut_down_in(119);
 
     run();
 
