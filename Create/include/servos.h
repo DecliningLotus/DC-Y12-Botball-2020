@@ -17,3 +17,9 @@ void closeClaw(int start, int end);
 void raiseArmAstro();
 
 void lowerArmAstro();
+
+void lowerArm();
+
+void lowerArmSabotage();
+
+void raiseArmSabotage();

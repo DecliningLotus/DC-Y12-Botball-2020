@@ -8,7 +8,7 @@ void run()
     //Charge and Grab Botguy
     openClaw(500, 1600);
     spinLeftAngle(100, 11);
-    moveForwardDistance(400, 800);
+    moveForwardDistance(500, 800);
     while (get_create_rbump() == 0)
     {
         moveForward(200);
@@ -18,7 +18,6 @@ void run()
     msleep(200);
 
     //Drop Botguy
-    spinRightAngle(100, 10);
     moveBackwardDistance(100, 430);
     openClaw(500, 1600);
     moveForwardDistance(100, 20);
@@ -26,11 +25,11 @@ void run()
 
     //Sweep Astronauts
     spinLeftAngle(100, 33);
-    moveBackwardDistance(100, 260);
+    moveBackwardDistance(100, 210);
     closeClaw(1600, 500);
     spinLeftAngle(100, 57);
     msleep(200);
-    moveBackwardDistance(50, 25);
+    moveBackwardDistance(50, 00);
     lowerArmAstro();
     msleep(200);
     spinRightAngle(100, 57);
@@ -39,11 +38,11 @@ void run()
 
     //Set pos for communication Orb
     openClaw(500, 1400);
-    spinLeftAngle(100, 127);
+    spinLeftAngle(100, 91);
     lowerArmBottom(600, 180);
 
     // Go to communication orb
-    moveForwardDistance(300, 90);
+    moveForwardDistance(300, 50);
     msleep(100);
 
     //Pick up Communication Orb
@@ -51,9 +50,11 @@ void run()
     raiseArmTop(180, 450);
 
     //Head towards Communication Orb staging zone
-    spinRightAngle(100, 154);
+    spinRightAngle(100, 160);
     moveForwardDistance(300, 420);
+    lowerArm();
     openClaw(500, 1200);
-    msleep(200);
+    msleep(15);
     closeClaw(1200, 500);
+    msleep(300);
 }

@@ -6,8 +6,8 @@ int main()
     create_connect();
     enable_servos();
     printf("Create initialization complete!");
-    //wait_for_light(<analog port>);
-    shut_down_in(119);
+    wait_for_light(5);
+    shut_down_in(118);
 
     run();
 
